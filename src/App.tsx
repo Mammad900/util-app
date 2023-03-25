@@ -6,9 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function App() {
     return (
         <div className="App">
-            {Object.entries(utilList).map(([route, { name, icon }]) => (
+            {Object.entries(utilList).map(([route, { name, Icon }]) => (
                 <Link key={route} to={route}>
-                    <FontAwesomeIcon icon={icon} />
+                    <Icon />
                     {name}
                 </Link>
             ))}

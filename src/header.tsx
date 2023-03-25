@@ -6,16 +6,16 @@ import "./header.scss";
 
 export function Header() {
     const location = useLocation();
-    const utilInfo = utilList[location.pathname.slice(1)];
+    const { name, Icon } = utilList[location.pathname.slice(1)];
     return (
         <>
             <header id="main-header">
                 <Link to="/">
                     <FontAwesomeIcon icon={faArrowLeft} />
                 </Link>
-                <FontAwesomeIcon icon={utilInfo.icon} />
+                <Icon />
                 <h1>
-                    {utilInfo.name}
+                    {name}
                 </h1>
             </header>
             <Outlet />

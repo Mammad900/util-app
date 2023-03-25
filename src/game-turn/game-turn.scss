@@ -1,0 +1,54 @@
+main#game-turn {
+    &.add-players {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                padding-bottom: 10px;
+            }
+
+            input, button {
+                border: none;
+                background-color: var(--color-header);
+                padding: 10px;
+            }
+
+            > button {
+                width: 100%;
+            }
+        }
+
+        .go {
+            padding: 20px;
+            border: none;
+            background-color: var(--color-header);
+        }
+    }
+
+    &.turn {
+        position: relative;
+        display: flex;
+
+        .player {
+            margin: auto;
+            font-size: 3em;
+        }
+        
+        .end {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            border: none;
+            background-color: var(--color-header);
+        }
+    }
+}

@@ -1,15 +1,19 @@
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import ToDo from './todo/todo';
+import GameTurn, { GameTurnIcon } from './game-turn/game-turn';
+import ToDo, { ToDoIcon } from './todo/todo';
 
 export const utilList: Record<string, {
     name: string,
-    icon: IconDefinition,
+    Icon: React.FunctionComponent,
     component: React.FunctionComponent
 }> = {
-    todo: {
+    'todo': {
         name: 'Todo',
-        icon: faCheck,
+        Icon: ToDoIcon,
         component: ToDo
+    },
+    'game-turn': {
+        name: 'Game Turn',
+        Icon: GameTurnIcon,
+        component: GameTurn
     }
 }

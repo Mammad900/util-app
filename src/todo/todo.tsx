@@ -1,8 +1,20 @@
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Link, NavLink, useSearchParams } from "react-router-dom";
+import { NavLink, useSearchParams } from "react-router-dom";
 import "./todo.scss"
+
+export function ToDoIcon() {
+    return (
+        <svg version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
+            <line style={{stroke: 'currentcolor', strokeWidth:8, strokeLinecap:'round'}} x1="45" y1="30" x2="85" y2="30"/>
+            <line style={{stroke: 'currentcolor', strokeWidth:8, strokeLinecap:'round'}} x1="18" y1="37.5" x2="38" y2="17.5"/>
+            <line style={{stroke: 'currentcolor', strokeWidth:8, strokeLinecap:'round'}} x1="12.5" y1="32.5" x2="17.5" y2="37.5"/>
+            <line style={{stroke: 'currentcolor', strokeWidth:8, strokeLinecap:'round'}} x1="45" y1="70" x2="85" y2="70"/>
+            <circle style={{fill: 'currentcolor'}} cx="20" cy="70" r="10"/>
+        </svg>
+    )
+}
 
 type Todo = {
     title: string,

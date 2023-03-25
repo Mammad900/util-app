@@ -8,12 +8,15 @@
     top: 0;
     z-index: 9;
 
-    svg {
-        font-size: 2em;
+    > svg {
+        height: 40px;
     }
 
     a {
         color: var(--color-icon);
+        font-size: 2em;
+        display: inline-block;
+        line-height: 32px;
 
         &:hover {
             color: var(--color-icon-hover);
