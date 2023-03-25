@@ -1,0 +1,41 @@
+name: Build and deploy to GH pages
+
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository so we can access its contents
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    # Prepare Node.js
+    - name: Use Node.js 15.x
+      uses: actions/setup-node@v2
+      with:
+        node-version: 15.x
+
+    # Install all dependencies defined in package.json
+    - name: Install dependencies
+      run: npm ci
+
+    # Create an optimized build
+    - name: Build
+      run: npm run build --if-present
+      env:
+        CI: false
+
+    # Deploy to GitHub Pages
+    - name: GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v2.3.0
+      if: success()
+      with:
+        keep_history: true
+        build_dir: build
+        target_branch: gh-pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
