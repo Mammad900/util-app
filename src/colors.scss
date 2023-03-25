@@ -1,0 +1,26 @@
+:root {
+    --color-background: white;
+    --color-foreground: black;
+    --color-subtext: gray;
+    --color-header: #eee;
+    // --color-header-shadow: 
+    --color-icon: gray;
+    --color-icon-hover: black;
+    --color-accent: rgb(0, 106, 255);
+    --color-button-primary: var(--color-accent);
+    --color-button-primary-hover: rgb(53, 137, 255);
+    --color-button-primary-text: white;
+    --color-shadow: gray;
+
+    // @media (prefers-color-scheme: dark) {
+    //     --color-background: white;
+    //     --color-foreground: black;
+    //     --color-header: #eee;
+    //     // --color-header-shadow: 
+    //     --color-icon: gray;
+    //     --color-icon-hover: black;
+    //     --color-button-primary: rgb(0, 106, 255);
+    //     --color-button-primary-hover: rgb(28, 123, 255);
+    //     --color-button-primary-text: white;
+    // }
+}
