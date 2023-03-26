@@ -5,7 +5,7 @@ import './colors.scss';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import { Header } from './header';
 import { utilList } from './list';
 
@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route index element={<App />} />
                 <Route path='/' element={<Header />}>
@@ -23,7 +23,7 @@ root.render(
                     ))}
                 </Route>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     </React.StrictMode>
 );
 
