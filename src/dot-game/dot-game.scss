@@ -1,0 +1,84 @@
+main#dot-game {
+    display: flex;
+
+    .game {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        
+        --player-color-1: rgb(0, 89, 255);
+        --player-color-2: red;
+        --player-color-3: green;
+        --player-color-4: rgb(255, 221, 0);
+        --player-color-1-dim: rgb(126, 171, 255);
+        --player-color-2-dim: #ff8080;
+        --player-color-3-dim: #83ff83;
+        --player-color-4-dim: rgb(255, 236, 112);
+
+        .players {
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--color-header);
+    
+            .player {
+                text-align: center;
+                position: relative;
+                --time-left: 100%;
+    
+                &.turn {
+                    background-color: var(--player-color-dim);
+                    color: var(--color-button-primary-text);
+    
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        width: var(--time-left);
+                        transition: width 100ms linear;
+                        background-color: var(--player-color);
+                    }
+                }
+    
+                @each $n in 1, 2, 3, 4 {
+                    &:nth-child(#{$n}) {
+                        --player-color-dim: var(--player-color-#{$n}-dim);
+                        --player-color: var(--player-color-#{$n});
+                    }
+                }
+    
+                .content {
+                    border: 2px solid var(--player-color);
+                    padding: 0 10px 10px;
+                    position: relative;
+                    z-index: 1;
+    
+                    .score {
+                        font-size: 1.2em;
+                    }
+    
+                    h2 {
+                        margin: 0 0 10px;
+                    }
+                }
+            }
+        }
+    
+        .canvases {
+            flex-grow: 1;
+            position: relative;
+            box-shadow: inset 0px 50px 15px -50px var(--color-shadow);
+        }
+    
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            overscroll-behavior: contain;
+        }
+    }
+}
