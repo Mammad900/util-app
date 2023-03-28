@@ -35,3 +35,10 @@ html, body, #root {
     }
   }
 }
+
+html {
+  background-color: var(--color-background);
+}
+html, input, button, textarea {
+  color: var((--color-foreground));
+}

@@ -12,15 +12,17 @@
     --color-button-primary-text: white;
     --color-shadow: gray;
 
-    // @media (prefers-color-scheme: dark) {
-    //     --color-background: white;
-    //     --color-foreground: black;
-    //     --color-header: #eee;
-    //     // --color-header-shadow: 
-    //     --color-icon: gray;
-    //     --color-icon-hover: black;
-    //     --color-button-primary: rgb(0, 106, 255);
-    //     --color-button-primary-hover: rgb(28, 123, 255);
-    //     --color-button-primary-text: white;
-    // }
+    @media (prefers-color-scheme: dark) {
+        --color-background: black;
+        --color-foreground: white;
+        --color-subtext: gray;
+        --color-header: #222;
+        --color-icon: gray;
+        --color-icon-hover: white;
+        --color-accent: rgb(57 138 255);
+        --color-button-primary: var(--color-accent);
+        --color-button-primary-hover: rgb(8, 111, 255);
+        --color-button-primary-text: white;
+        --color-shadow: black;
+    }
 }
