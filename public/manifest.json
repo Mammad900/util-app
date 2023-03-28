@@ -21,5 +21,22 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "shortcuts": [
+    {
+      "name": "Todo",
+      "url": "#/todo",
+      "icons": [{ "src": "todo.png", "sizes": "313x313" }]
+    },
+    {
+      "name": "Game Turn",
+      "url": "#/game-turn",
+      "icons": [{ "src": "game-turn.png", "sizes": "313x313" }]
+    },
+    {
+      "name": "Dot Game",
+      "url": "#/dot-game",
+      "icons": [{ "src": "todo.png", "sizes": "313x313" }]
+    }
+  ]
 }
