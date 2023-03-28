@@ -46,6 +46,7 @@ export default function GameTurn() {
                                         ...p.slice(index + 1)
                                     ])}
                                     placeholder="Player name"
+                                    autoFocus
                                 />
                                 <button
                                     onClick={() => setPlayers(p => [

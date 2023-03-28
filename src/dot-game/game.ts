@@ -39,7 +39,6 @@ export default class DotGameGame {
     drawFromDot: [number, number] | undefined;
 
     playerTurn = 0;
-    playerCount = 2;
     playerScores: number[];
     totalLines = 0;
 
@@ -48,6 +47,7 @@ export default class DotGameGame {
     constructor(
         public width: number,
         public height: number,
+        public playerCount: number,
         public canvasSquares: HTMLCanvasElement,
         public canvasLines: HTMLCanvasElement,
         public canvasNewLine: HTMLCanvasElement,
@@ -141,6 +141,7 @@ export default class DotGameGame {
     }
 
     onMouseMove(e: MouseEvent|TouchEvent) {
+        e.preventDefault();
 
         const rect = this.canvasDots.getBoundingClientRect();
         const offsetX = e instanceof MouseEvent ? e.offsetX : e.targetTouches[0].pageX - rect.left;
@@ -172,13 +173,13 @@ export default class DotGameGame {
         this.hoverPos = [viewPortX * this.canvasDots.width, viewPortY * this.canvasDots.height]
     }
 
-    onMouseLeave(e?: MouseEvent|TouchEvent) {
+    onMouseLeave(e?: MouseEvent | TouchEvent) {
+        e?.preventDefault();
         this.hoverDot && this.drawDot(...this.hoverDot, false);
         this.onMouseUp();
     }
 
     onMouseDown(e: MouseEvent|TouchEvent) {
-
         this.onMouseMove(e);
         if (e instanceof TouchEvent || e.button === 0) {
             this.mouseDown = true;
@@ -186,7 +187,9 @@ export default class DotGameGame {
         }
     }
 
-    onMouseUp(e?: MouseEvent|TouchEvent) {
+    onMouseUp(e?: MouseEvent | TouchEvent) {
+        e?.preventDefault();
+
         this.mouseDown = false;
         this.ctxNewLine.clearRect(0, 0, this.canvasNewLine.width, this.canvasNewLine.height);
         if (this.drawFromDot) {
