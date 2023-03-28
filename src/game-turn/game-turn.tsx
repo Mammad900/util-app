@@ -75,13 +75,13 @@ export default function GameTurn() {
                     <div className="player">
                         {players[turn]}
                     </div>
-                        <button
-                            className="end"
-                            onClick={e => {
-                                e.stopPropagation();
-                                setTurn(-1);
-                            }}
-                        >
+                    <button
+                        className="end"
+                        onClick={e => {
+                            e.stopPropagation();
+                            setTurn(-1);
+                        }}
+                    >
                         End
                     </button>
                 </>
