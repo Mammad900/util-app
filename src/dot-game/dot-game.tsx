@@ -118,7 +118,6 @@ function Game({ width, height, players, onBack }: { width: number, height: numbe
         );
         setGame(game);
         game.updatePlayerScores = () => {
-            console.log(game.playerScores)
             setScores([...game.playerScores]);
         }
         game.updateTurn = () => setTurn(game.playerTurn);
