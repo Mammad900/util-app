@@ -9,18 +9,31 @@ const indexOfAll = <T>(items: T[], searchFor: T): number[] => {
     return results;
 }
 
+const usesDarkTheme = matchMedia("(prefers-color-scheme: dark)").matches;
+console.log(usesDarkTheme);
+
 export default class DotGameGame {
-    static colors = [
+    static colors = usesDarkTheme ? [
         'rgb(0, 89, 255)',
         'red',
         'green',
-        'rgb(195, 169, 0)'
+        'rgb(195, 169, 0)',
+    ] : [
+        'rgb(0, 89, 255)',
+        'red',
+        'green',
+        'rgb(195, 169, 0)',
     ];
-    static colorsDimmed = [
+    static colorsDimmed = usesDarkTheme ? [
+        'rgb(0, 50, 120)',
+        '#600',
+        '#005500',
+        'rgb(60, 60, 0)',
+    ] : [
         'rgb(126, 171, 255)',
         '#ff8080',
         '#83ff83',
-        'rgb(255, 236, 112)'
+        'rgb(255, 236, 112)',
     ];
     static dotRadius = 0.1;
     static lineWidth = 0.05;
