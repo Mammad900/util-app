@@ -84,8 +84,9 @@ export default class DotGameGame {
 
     drawDot(x: number, y: number, hover = false) {
         ([x, y] = this.getDotPosition(x, y));
+        this.ctxDots.clearRect(x - this.scale / 2, y - this.scale / 2, this.scale, this.scale);
         this.ctxDots.beginPath();
-        this.ctxDots.fillStyle = hover ? "black" : "gray";
+        this.ctxDots.fillStyle = hover ? (usesDarkTheme ? "white" : "black") : "gray";
         this.ctxDots.arc(x, y, DotGameGame.dotRadius * this.scale, 0, 2 * Math.PI);
         this.ctxDots.closePath();
         this.ctxDots.fill();
