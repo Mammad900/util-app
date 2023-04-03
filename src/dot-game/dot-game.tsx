@@ -19,7 +19,7 @@ export function DotGameIcon() {
 export default function DotGame() {
     const [width, setWidth] = React.useState(10);
     const [height, setHeight] = React.useState(10);
-    const [players, setPlayers] = React.useState<string[]>(['Player 1', 'Player 2']);
+    const [players, setPlayers] = React.useState<string[]>(['', '']);
     const [go, setGo] = React.useState(false);
 
     return (
@@ -28,7 +28,7 @@ export default function DotGame() {
                 <Game
                     width={width}
                     height={height}
-                    players={players}
+                    players={players.map((p, i)=> p|| `Player ${i+1}`)}
                     onBack={() => setGo(false)}
                 />
             ) : (
@@ -65,7 +65,7 @@ export default function DotGame() {
                                         e.target.value,
                                         ...p.slice(index + 1)
                                     ])}
-                                    placeholder="Player name"
+                                    placeholder={`Player ${index+1}`}
                                     autoFocus
                                 />
                                 <button
@@ -88,7 +88,7 @@ export default function DotGame() {
                     <button
                         className="start"
                         onClick={() => setGo(true)}
-                        disabled={players.length === 0 || players.some(n => n.length === 0)}
+                        disabled={players.length === 0}
                     >
                         Start
                     </button>
