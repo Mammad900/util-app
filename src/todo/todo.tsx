@@ -102,7 +102,17 @@ export default function ToDo() {
                             <div className="title">{todo.title}</div>
                             {todo.description && <div className="description">{todo.description}</div>}
                         </div>
-                        <button className="close">
+                        <button
+                            className="close"
+                            onClick={() => {
+                                setTodos(todos => (
+                                    {
+                                        ...todos,
+                                        [listName]: todos[listName].filter(t=> t.id !== todo.id)
+                                    }
+                                ))
+                            }}
+                        >
                             <FontAwesomeIcon icon={faTimes} />
                         </button>
                     </li>
