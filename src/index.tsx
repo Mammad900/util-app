@@ -17,6 +17,7 @@ root.render(
         <HashRouter>
             <Routes>
                 <Route index element={<App />} />
+                <Route path="*" element={<><h1>404</h1><p>Page not found</p></>} />
                 <Route path='/' element={<Header />}>
                     {Object.entries(utilList).map(([path, { component: Component }]) => (
                         <Route key={path} path={path} element={<Component />} />
