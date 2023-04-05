@@ -1,0 +1,43 @@
+main#physics-cheat-sheet {
+    .katex-html {
+        display: none;
+    }
+
+    > .index {
+        padding: 20px;
+        
+        a {
+            display: block;
+            color: var(--color-accent);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    nav {
+        background-color: var(--color-header);
+        display: flex;
+
+        a {
+            flex-grow: 1;
+            padding: 10px;
+            color: var(--color-foreground);
+            padding-bottom: 7px;
+            border-bottom: 3px solid transparent;
+            text-decoration: none;
+            text-align: center;
+
+            &:hover {
+                color: var(--color-accent);
+            }
+
+            &.active {
+                color: var(--color-accent);
+                border-bottom-color: var(--color-accent);
+            }
+        }
+    }
+}

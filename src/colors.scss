@@ -7,6 +7,7 @@
     --color-icon: gray;
     --color-icon-hover: black;
     --color-accent: rgb(0, 106, 255);
+    --color-accent-dim: rgba(57, 140, 255, 0.4);
     --color-button-primary: var(--color-accent);
     --color-button-primary-hover: rgb(53, 137, 255);
     --color-button-primary-text: white;
@@ -22,6 +23,7 @@
         --color-icon: gray;
         --color-icon-hover: white;
         --color-accent: rgb(57 138 255);
+        --color-accent-dim: rgba(57, 140, 255, 0.4);
         --color-button-primary: var(--color-accent);
         --color-button-primary-hover: rgb(8, 111, 255);
         --color-button-primary-text: white;

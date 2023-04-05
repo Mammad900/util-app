@@ -6,7 +6,7 @@ import "./header.scss";
 
 export function Header() {
     const location = useLocation();
-    const { name, Icon } = utilList[location.pathname.slice(1)];
+    const { name, Icon } = utilList[location.pathname.slice(1).split('/')[0]];
     return (
         <>
             <header id="main-header">

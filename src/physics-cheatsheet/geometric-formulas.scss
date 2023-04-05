@@ -1,0 +1,78 @@
+main#physics-cheat-sheet > .geometric-formulas {
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+
+        section {
+            width: 275px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+
+            svg {
+                .stroke {
+                    stroke-width: 2px;
+                    stroke: currentColor;
+                }
+                .stroke-light {
+                    stroke-width: 1.5px;
+                    stroke: currentColor;
+                    opacity: 0.4;
+                }
+
+                * {
+                    fill: none;
+                }
+
+                .fill {
+                    stroke: none;
+                    fill: currentColor
+                }
+
+                .hl-stroke {
+                    stroke: var(--color-accent);
+                }
+
+                .hl-fill {
+                    fill: var(--color-accent-dim);
+                }
+
+                text {
+                    font-family: math;
+                    fill: currentcolor;
+                    text-transform: math-auto;
+
+                    &.bottom {
+                        text-anchor: middle;
+                        dominant-baseline: ideographic;
+                    }
+
+                    &.top {
+                        text-anchor: middle;
+                        dominant-baseline: hanging;
+                    }
+
+                    &.right {
+                        text-anchor: end;
+                        dominant-baseline: central;
+                    }
+
+                    &.left {
+                        text-anchor: start;
+                        dominant-baseline: central;
+                    }
+                }
+            }
+
+            .info {
+                flex-grow: 1;
+
+                h3 {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

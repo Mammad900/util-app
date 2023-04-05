@@ -19,8 +19,8 @@ root.render(
                 <Route index element={<App />} />
                 <Route path="*" element={<><h1>404</h1><p>Page not found</p></>} />
                 <Route path='/' element={<Header />}>
-                    {Object.entries(utilList).map(([path, { component: Component }]) => (
-                        <Route key={path} path={path} element={<Component />} />
+                    {Object.entries(utilList).map(([path, { component: Component, subRoutes }]) => (
+                        <Route key={path} path={path} element={<Component />} children={subRoutes?.()} />
                     ))}
                 </Route>
             </Routes>
