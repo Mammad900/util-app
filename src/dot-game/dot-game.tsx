@@ -1,8 +1,7 @@
 import React from "react";
 import DotGameGame from "./game";
 import "./dot-game.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
+import PlayerList from "../components/player-list";
 
 export function DotGameIcon() {
     return (
@@ -54,39 +53,10 @@ export default function DotGame() {
                         </div>
                     </div>
 
-                    <ul>
-                        {players.map((name, index) => (
-                            <li key={index}>
-                                <input
-                                    type="text"
-                                    value={name}
-                                    onChange={e => setPlayers(p => [
-                                        ...p.slice(0, index),
-                                        e.target.value,
-                                        ...p.slice(index + 1)
-                                    ])}
-                                    placeholder={`Player ${index+1}`}
-                                    autoFocus
-                                />
-                                <button
-                                    onClick={() => setPlayers(p => [
-                                        ...p.slice(0, index),
-                                        ...p.slice(index + 1)
-                                    ])}
-                                >
-                                    <FontAwesomeIcon icon={faTimes} />
-                                </button>
-                            </li>
-                        ))}
-                        {players.length < 4 && (
-                            <button onClick={() => setPlayers(p => [...p, 'Player ' + (p.length + 1)])}>
-                                <FontAwesomeIcon icon={faPlus} />
-                            </button>
-                        )}
-                    </ul>
+                    <PlayerList players={players} setPlayers={setPlayers} />
 
                     <button
-                        className="start"
+                        className="start primary"
                         onClick={() => setGo(true)}
                         disabled={players.length === 0}
                     >

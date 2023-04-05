@@ -12,12 +12,8 @@
             flex-grow: 1;
 
             input, textarea {
-                display: block;
                 width: 100%;
-                margin: 0;
-                box-sizing: border-box;
-                border: none;
-                padding: 10px;
+                display: block;
                 background-color: var(--color-background);
             }
             
@@ -35,19 +31,7 @@
         input[type=submit] {
             width: 20%;
             min-width: 100px;
-            padding: 10px;
-            background-color: var(--color-button-primary);
-            color: var(--color-button-primary-text);
-            border: none;
             font-size: 1.2em;
-
-            &:hover {
-                background-color: var(--color-button-primary-hover);
-            }
-
-            &:disabled {
-                opacity: 0.5;
-            }
         }
 
         @media (max-width: 600px) {

@@ -62,6 +62,7 @@ export default function ToDo() {
                 </div>
                 <input
                     type="submit"
+                    className="primary"
                     onClick={(e) => {
                         e.preventDefault();
                         setTodos(todos => (

@@ -1,6 +1,5 @@
-import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import PlayerList from "../components/player-list";
 import "./game-turn.scss";
 
 export function GameTurnIcon() {
@@ -34,38 +33,11 @@ export default function GameTurn() {
         >
             {turn === -1 ? (
                 <>
-                    <ul>
-                        {players.map((name, index) => (
-                            <li key={index}>
-                                <input
-                                    type="text"
-                                    value={name}
-                                    onChange={e => setPlayers(p => [
-                                        ...p.slice(0, index),
-                                        e.target.value,
-                                        ...p.slice(index + 1)
-                                    ])}
-                                    placeholder="Player name"
-                                    autoFocus
-                                />
-                                <button
-                                    onClick={() => setPlayers(p => [
-                                        ...p.slice(0, index),
-                                        ...p.slice(index + 1)
-                                    ])}
-                                >
-                                    <FontAwesomeIcon icon={faTimes} />
-                                </button>
-                            </li>
-                        ))}
-                        <button onClick={() => setPlayers(p => [...p, ''])}>
-                            <FontAwesomeIcon icon={faPlus} />
-                        </button>
-                    </ul>
+                    <PlayerList players={players} setPlayers={setPlayers} />
                     <button
-                        className="go"
+                        className="go primary"
                         onClick={() => setTurn(0)}
-                        disabled={players.length === 0 || players.some(n => n.length === 0)}
+                        disabled={players.length === 0}
                     >
                         GO
                     </button>
@@ -73,7 +45,7 @@ export default function GameTurn() {
             ) : (
                 <>
                     <div className="player">
-                        {players[turn]}
+                        {players[turn] || `Player ${turn+1}`}
                     </div>
                     <button
                         className="end"

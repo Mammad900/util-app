@@ -16,12 +16,6 @@ main#game-turn {
                 padding-bottom: 10px;
             }
 
-            input, button {
-                border: none;
-                background-color: var(--color-header);
-                padding: 10px;
-            }
-
             > button {
                 width: 100%;
             }
@@ -29,8 +23,6 @@ main#game-turn {
 
         .go {
             padding: 20px;
-            border: none;
-            background-color: var(--color-header);
         }
     }
 
@@ -49,8 +41,6 @@ main#game-turn {
             left: 0;
             right: 0;
             padding: 20px;
-            border: none;
-            background-color: var(--color-header);
         }
     }
 }

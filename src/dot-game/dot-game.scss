@@ -16,17 +16,9 @@ main#dot-game {
                 margin-bottom: 10px;
             }
 
-            .inputs {
-                span {
-                    display: inline-block;
-                    margin: 0 10px;
-                }
-
-                input {
-                    background-color: var(--color-header);
-                    border: none;
-                    padding: 10px;
-                }
+            .inputs span {
+                display: inline-block;
+                margin: 0 10px;
             }
         }
 
@@ -39,13 +31,6 @@ main#dot-game {
                 padding-bottom: 10px;
             }
 
-            input,
-            button {
-                border: none;
-                background-color: var(--color-header);
-                padding: 10px;
-            }
-
             >button {
                 width: 100%;
             }
@@ -53,8 +38,6 @@ main#dot-game {
 
         .start {
             padding: 20px;
-            border: none;
-            background-color: var(--color-header);
         }
     }
 
