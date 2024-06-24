@@ -68,6 +68,7 @@ input,
 button,
 textarea {
   color: var((--color-foreground));
+  font-family: var(--font-family)
 }
 
 input,
@@ -77,6 +78,11 @@ textarea {
   box-sizing: border-box;
   border: none;
   padding: 10px;
+
+  &:focus {
+    outline: none;
+    background-color: var(--color-button-secondary-hover);
+  }
 }
 
 button,

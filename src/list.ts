@@ -3,6 +3,7 @@ import DotGame, { DotGameIcon } from './dot-game/dot-game';
 import GameTurn, { GameTurnIcon } from './game-turn/game-turn';
 import PhysicsCheatSheet, { PhysicsCheatSheetIcon, PhysicsCheatSheetRoutes } from './physics-cheatsheet/physics-cheatsheet';
 import ToDo, { ToDoIcon } from './todo/todo';
+import { Calculator, CalculatorIcon } from './calculator/calculator';
 
 export const utilList: Record<string, {
     name: string,
@@ -31,4 +32,9 @@ export const utilList: Record<string, {
         component: PhysicsCheatSheet,
         subRoutes: PhysicsCheatSheetRoutes
     },
+    'calculator': {
+        name: 'Calculator',
+        Icon: CalculatorIcon,
+        component: Calculator
+    }
 }
