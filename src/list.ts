@@ -4,6 +4,7 @@ import GameTurn, { GameTurnIcon } from './game-turn/game-turn';
 import PhysicsCheatSheet, { PhysicsCheatSheetIcon, PhysicsCheatSheetRoutes } from './physics-cheatsheet/physics-cheatsheet';
 import ToDo, { ToDoIcon } from './todo/todo';
 import { Calculator, CalculatorIcon } from './calculator/calculator';
+import { Grader, GraderIcon } from './grader/grader';
 
 export const utilList: Record<string, {
     name: string,
@@ -36,5 +37,10 @@ export const utilList: Record<string, {
         name: 'Calculator',
         Icon: CalculatorIcon,
         component: Calculator
+    },
+    'grader': {
+        name: 'Test exam grader',
+        Icon: GraderIcon,
+        component: Grader
     }
 }

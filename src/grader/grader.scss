@@ -1,0 +1,44 @@
+main#grader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+
+    .fields {
+        display: flex;
+        gap: 1em;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    input {
+        display: block;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 1em;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .add {
+        padding: 1em;
+        border-radius: 1em;
+
+        &.correct {
+            background-color: green;
+        }
+        &.wrong {
+            background-color: red;
+        }
+        &.empty {
+            background-color: transparent;
+            border: 1px solid;
+        }
+    }
+
+    .result {
+        font-size: 3em;
+    }
+}
