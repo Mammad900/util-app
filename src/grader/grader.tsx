@@ -17,15 +17,15 @@ export function Grader() {
             <div className="fields">
                 <label>
                     Correct
-                    <input value={correct} onChange={e=>setCorrect(e.target.valueAsNumber)}/>
+                    <input type="number" value={correct} onChange={e=>setCorrect(e.target.valueAsNumber)}/>
                 </label>
                 <label>
                     Wrong
-                    <input value={wrong} onChange={e=>setWrong(e.target.valueAsNumber)}/>
+                    <input type="number" value={wrong} onChange={e=>setWrong(e.target.valueAsNumber)}/>
                 </label>
                 <label>
                     Total
-                    <input value={total} onChange={e=>setTotal(e.target.valueAsNumber)}/>
+                    <input type="number" value={total} onChange={e=>setTotal(e.target.valueAsNumber)}/>
                 </label>
             </div>
             <div className="buttons">                
